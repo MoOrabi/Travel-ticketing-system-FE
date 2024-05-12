@@ -30,4 +30,23 @@ export class HomeComponent {
   ngOnInit() {
     this.getAll()
   }
+
+  deleteFlight(flightId: number) {
+    return this.http.delete<any[]>(`${environment.apiUrl}`, {params: {
+      flightId: flightId
+    }})
+    .subscribe({
+      next: (res) => {
+        console.log(res); 
+        window.location.reload()
+      },
+      error: (err) => {
+        if(err == "OK") {
+          window.location.reload()
+        }
+        console.log(err);        
+      }
+    });
+  }
+  
 }

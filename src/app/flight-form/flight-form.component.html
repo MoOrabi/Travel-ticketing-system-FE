@@ -1,1 +1,42 @@
-<p>flight-form works!</p>
+<div class="container">
+    <h2>Add New Flight</h2>
+    <form [formGroup]="flightForm" (ngSubmit)="addOrUpdateFlight()">
+        <div class="inputField">
+            <div>
+                <label for="departureTime">Departure Time:</label>
+                <input formControlName="departureTime" type="datetime-local" name="departureTime" id="departureTime" required>
+            </div>
+            <div>
+                <label for="arrivalTime">Arrival Time:</label>
+                <input formControlName="arrivalTime" type="datetime-local" name="arrivalTime" id="arrivalTime" required>
+            </div>
+            <div>
+                <label for="fromCity">From City:</label>
+                <input formControlName="fromCity" type="text" name="fromCity" id="fromCity" required>
+            </div>
+            <div>
+                <label for="toCity">To City:</label>
+                <input formControlName="toCity" type="text" name="toCity" id="toCity" required>
+            </div>
+            <div>
+                <label for="airportCode">Airport Code:</label>
+                <input type="text" formControlName="airportCode" name="airportCode" id="airportCode" required>
+            </div>
+            <div>
+                <label for="aircraftId">Aircraft ID:</label>
+                <input type="text" formControlName="aircraftId" name="aircraftId" id="aircraftId" required>
+            </div>
+            <div>
+                <label for="ticketPrice">Ticket Price:</label>
+                <input type="number" formControlName="ticketPrice" name="ticketPrice" id="ticketPrice" required>
+            </div>
+            <div>
+                <label for="ticketPriceCurrency">Currency:</label>
+                <input type="text" formControlName="ticketPriceCurrency" name="ticketPriceCurrency" id="ticketPriceCurrency" required>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary" >Add Flight</button>
+        <button type="button" class="btn btn-secondary" routerLink="/home">Cancel</button>
+    </form>
+</div>

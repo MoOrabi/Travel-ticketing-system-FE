@@ -8,4 +8,5 @@ export interface Flight {
     aircraftId: string;
     ticketPrice: number;
     ticketPriceCurrency: string;
+    creatorId: string;
 }
